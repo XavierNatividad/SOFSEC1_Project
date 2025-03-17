@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using Microsoft.Data.Sqlite;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -19,7 +20,7 @@ namespace SOFSEC1_Project
 
         public static void GetUsername() 
         {
-            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            using (IDbConnection cnn = new SqliteConnection(LoadConnectionString()))
             {
                 var output = cnn.Query<User_LoginModel>("SELECT * from Person", new DynamicParameters());
             }
@@ -27,12 +28,33 @@ namespace SOFSEC1_Project
 
         public static List<User_ProfileModel> GetUserProfile()
         {
-            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            using (IDbConnection cnn = new SqliteConnection(LoadConnectionString()))
             {
                 var output = cnn.Query<User_ProfileModel>("SELECT * from user_profile", new DynamicParameters());
 
                 return output.ToList();
             }
+        }
+
+        private static void CreateProfile(User_ProfileModel newProfile)
+        {
+            using (IDbConnection cnn = new SqliteConnection(LoadConnectionString()))
+            {
+                cnn.Execute("INSERT into user_login (username, password) values (@username, @password)", newProfile);
+
+            }
+        }
+        private static void CreateLogin(User_LoginModel newLogin)
+        {
+            using (IDbConnection cnn = new SqliteConnection(LoadConnectionString()))
+            {
+                cnn.Execute("INSERT into user_login (username, password) values (@username, @password)", newLogin);
+            }
+        }
+        public static void CreateAccount(User_LoginModel newLogin, User_ProfileModel newUser)
+        {
+            CreateProfile(newUser);
+            CreateLogin(newLogin);
         }
 
     }

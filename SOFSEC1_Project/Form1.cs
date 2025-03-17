@@ -37,5 +37,75 @@ namespace SOFSEC1_Project
             ShowPanel(GPAVIEW);
         }
 
+        private void CreateAccountSignupBox_Click(object sender, EventArgs e)
+        {
+            UserRegistrationModel newUser = new UserRegistrationModel();
+
+            ////username
+            ////must be between 8-20 letters
+            //if ((UsernameSignupBox.Text.Length >= 8 && UsernameSignupBox.Text.Length <= 20))
+            //{
+            //    //must only contain letters, numbers, and underscores
+            //    if (UsernameSignupBox.Text.Contains(c =>))
+            //    {
+            //        //must be unique
+            //        if ()
+            //        {
+
+            //        }
+            //        else
+            //        {
+
+            //        }
+            //    }
+            //    else 
+            //    {
+                    
+            //    }
+            //}
+            //else
+            //{
+
+            //}
+
+            ////first name
+            ////must not be blank
+            //if ()
+            //{
+            //    //must not be 
+            //}
+            //else
+            //{
+            //}
+
+            ////passwords must match
+            //if (PasswordSignupBox.Text != ConfirmPasswordSignupBox.Text)
+            //{
+
+            //}
+        }
+
+        private void UsernameSignupBox_TextChanged(object sender, EventArgs e)
+        {
+            if ((UsernameSignupBox.Text.Length >= 8 && UsernameSignupBox.Text.Length <= 20))
+            {
+                toolTip1.Show("Must be between 8 and 20 characters", UsernameSignupBox);
+            }
+        }
+
+        private void FirstNameSignupBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PasswordSignupBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ConfirmPasswordSignupBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
