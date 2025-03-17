@@ -8,7 +8,7 @@ namespace SOFSEC1_Project
 {
     public class User_LoginModel
     {
-        public int Id { get; set; }
+        public int loginId { get; set; }
         public string username { get; set; }
         public string password { get; set; }
     }

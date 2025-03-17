@@ -17,11 +17,21 @@ namespace SOFSEC1_Project
             return ConfigurationManager.ConnectionStrings[id].ConnectionString;
         }
 
-        public static void Login() 
+        public static void GetUsername() 
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                // var output = cnn.Query<ModelName>("SELECT * from Person", new DynamicParameters());
+                var output = cnn.Query<User_LoginModel>("SELECT * from Person", new DynamicParameters());
+            }
+        }
+
+        public static List<User_ProfileModel> GetUserProfile()
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                var output = cnn.Query<User_ProfileModel>("SELECT * from user_profile", new DynamicParameters());
+
+                return output.ToList();
             }
         }
 

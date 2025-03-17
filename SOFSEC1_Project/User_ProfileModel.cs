@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SOFSEC1_Project
 {
-    class User_ProfileModel
+    public class User_ProfileModel
     {
         public int Id { get; set; }
         public int UserId { get; set; }
