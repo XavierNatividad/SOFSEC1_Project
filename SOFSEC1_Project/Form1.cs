@@ -17,44 +17,25 @@ namespace SOFSEC1_Project
             InitializeComponent();
         }
 
-        private void lblGPAware(object sender, EventArgs e)
+        private void ShowPanel(Panel panelToShow)
         {
-          
+            // Hide all panels first DAGDAG SI GPATRACK
+            CALCULATOR.Visible = false;
+            HOME.Visible = false;
+            DASHBOARD.Visible = false;
+            SIGNUP.Visible = false;
+            GPAVIEW.Visible = false;
+
+            // Show the selected panel
+            panelToShow.Visible = true;
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
 
+
+        private void GPACalculator_Click(object sender, EventArgs e)
+        {
+            ShowPanel(GPAVIEW);
         }
 
-        private void HOME_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void GPAware_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
     }
 }
