@@ -10,14 +10,29 @@ using System.Windows.Forms;
 
 namespace SOFSEC1_Project
 {
-    public partial class Form1: Form
+    public partial class GPAware: Form
     {
-        public Form1()
+        public GPAware()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void lblGPAware(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void HOME_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void GPAware_Load(object sender, EventArgs e)
         {
 
         }
